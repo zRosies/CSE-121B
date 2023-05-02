@@ -26,7 +26,7 @@ const picture = "images/gentle.jpg";
 //Done
 
 // Step 7: place the value of the picture variable into the HTML file (hint: document.querySelector().setAttribute())
-document.querySelector("header img").setAttribute('src',picture);
+document.querySelector("header img").setAttribute('src', picture);
 
 
 
