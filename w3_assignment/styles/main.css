@@ -88,6 +88,10 @@ section {
     grid-template-columns: 1fr;
 }
 
+input{
+    color: black;
+}
+
 /* media queries */
 @media only screen and (min-width: 32.5em) {
     nav ul {
