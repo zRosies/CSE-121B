@@ -101,8 +101,8 @@ section {
 }
 
 #temples {
-    display: grid;
-    grid-template-columns: 1fr;
+    display:flex;
+    justify-content: center;
 }
 
 /* Media Queries */
