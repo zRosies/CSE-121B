@@ -76,8 +76,10 @@ const templeLis=[];
 // - Appends the <h3> element, the two <h4> elements, and the <img> element to the <article> element as children
 // - Appends the <article> element to the HTML element with an ID of temples
 function output(templelis){
-    const article = document.createElement("article");
+    const templesElement = document.querySelector("#temples");
+    templesElement.innerHTML = "";
     templelis.forEach(function(temple){
+        const article = document.createElement("article");
         const h3 = document.createElement("h3");
         h3.textContent=temple.templeName;
         const h4 = document.createElement("h4");
@@ -91,14 +93,10 @@ function output(templelis){
         article.appendChild(h4);
         article.appendChild(h4de);
         article.appendChild(img)
-        templeLis.push(temple);
-    })
-    // templelist.appendChild(article)
-    document.querySelector("#temples").appendChild(article)
-    
-    console.log(templeLis)
-    
-  
+        templesElement.append(article);
+
+    }    
+    )
 }
 
 
@@ -113,15 +111,15 @@ async function getTemples(){
     if (response.ok){
         const data = await response.json();
         output(data)
+        templeLis.push(...data)
     }
 
 }
-
-getTemples();
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
 function reset(){
     const templescleared= document.querySelector("#temples")
     templescleared.innerHTML='';
+    
 }
 
 // Step 8: Declare a function named sortBy that does the following:
@@ -130,7 +128,6 @@ function reset(){
 // - Calls the output function passing in the sorted list of temples
 
 function sortBy(){
-    
     const sortby = document.querySelector("#sortBy").value;
     if(sortby === "templeNameAscending"){
         templeLis.sort((a, b) => a.templeName.localeCompare(b.templeName));
@@ -141,12 +138,12 @@ function sortBy(){
     }
     reset();
     output(templeLis);
-    
-    
+      
 }
 
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
 document.querySelector("#sortBy").addEventListener('change', sortBy)
+getTemples();
 
 /* STRETCH */
 
