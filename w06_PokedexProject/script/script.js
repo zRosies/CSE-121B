@@ -51,7 +51,7 @@ let clastype= document.querySelectorAll(".type");
 
 const form = document.querySelector('.pokedex');
 
-let defaultpokemon= 262;
+let defaultpokemon= 315;
 // let PreviousNext= parseInt(defaultpokemon);
 
 async function getApilink(pokemon){
@@ -165,16 +165,6 @@ async function GetPokemon(pokemon){
       });
     }
 
-    
-   
-
-    
-    // else if (types[0] == 'fire'){
-      
-    // }
-    // else if (types[0] == 'fire'){
-      
-    // }
   }
   else{
     clastype.forEach(element => {
@@ -220,12 +210,5 @@ next.addEventListener('click', function() {
   GetPokemon(defaultpokemon)
 });
 
-
-
-
-// form.addEventListener('submit', function(){
-//   const input = document.querySelector("#input");
-//   GetPokemonName(input.value);
-// })
 
 
