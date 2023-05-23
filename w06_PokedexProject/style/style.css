@@ -65,6 +65,7 @@ footer p{
     padding: 0;
     width: 100%;
     position: absolute;
+    height: 490px;
    
     /* 
     transition: transform 0.5s; Specifies the transition for smooth animation */

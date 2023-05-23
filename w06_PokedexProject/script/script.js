@@ -48,7 +48,7 @@ let clastype= document.querySelectorAll(".type");
 
 const form = document.querySelector('.pokedex');
 
-let defaultpokemon= 315;
+let defaultpokemon= 497;
 
 
 async function getApilink(pokemon){
