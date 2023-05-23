@@ -44,7 +44,8 @@ const next = document.querySelector("#next");
 const previous = document.querySelector("#previous");
 const pokeball = document.querySelector("#pokeball");
 const pokeball2= document.querySelector("#pokeball2");
-const poketype = document.querySelector("#poketype")
+const poketype = document.querySelector("#poketype");
+let clastype= document.querySelectorAll(".type");
 
 
 
@@ -87,15 +88,21 @@ async function GetPokemon(pokemon){
       secondtype=`/${types[1]}`
     }
     poketype.innerHTML = `${types[0]}${secondtype}`;
-    
+    clastype.forEach(element => {
+      element.style.display = 'flex';
+    });
   }
   else{
+    clastype.forEach(element => {
+      element.style.display = 'none';
+    });
     pokemonnumber.innerHTML=`Not found ;-;`;
     pokemonname.style.display='none';
     pokemonpic.style.display='none'
     pokeball2.style.display='flex'
     
   }
+ 
 }
 
 GetPokemon(defaultpokemon);
