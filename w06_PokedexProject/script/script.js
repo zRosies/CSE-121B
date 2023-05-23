@@ -37,11 +37,16 @@ button.addEventListener('click', function() {
 //Here we go...
 
 const pokemonpic = document.querySelector("#pokemon")
+const pokemonnumber= document.querySelector("#number");
 const pokemonname = document.querySelector("#name");
-const next = document.querySelector("#next")
-// const pokemonnumber= document.querySelector("");
-const pokeball = document.querySelector("#pokeball")
-let pokemon= 1;
+const next = document.querySelector("#next");
+const previous = document.querySelector("#previous");
+const pokeball = document.querySelector("#pokeball");
+const pokeball2= document.querySelector("#pokeball2");
+
+const form = document.querySelector('.pokedex');
+
+let defaultpokemon= 1;
 
 
 async function getApilink(pokemon){
@@ -53,22 +58,38 @@ async function getApilink(pokemon){
 
 async function GetPokemon(pokemon){
   const data = await getApilink(pokemon)
-  // pokemonnumber.innerHTML=data.number;
+  pokemonnumber.innerHTML=`${data.id} -`;
   pokemonname.innerHTML=data.name;
   pokemonpic.src=data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
 }
 
-const form = document.querySelector('.pokedex');
+GetPokemon(defaultpokemon);
+previous.addEventListener('click', function() {
+  pokeball2.style.display='none'
+  pokeball.style.display= 'flex';
+  setTimeout(() => {
+    pokeball.style.display= 'none';
+    pokeball2.style.display='flex'
+  }, 800);
+  GetPokemon(defaultpokemon)
+});
 
 next.addEventListener('click', function() {
-  pokemon +=1;
-  GetPokemon(pokemon)
+  pokeball2.style.display='none'
+  pokeball.style.display= 'flex';
+  setTimeout(() => {
+    pokeball.style.display= 'none';
+    pokeball2.style.display='flex'
+  }, 800);
+  defaultpokemon +=1;
+  GetPokemon(defaultpokemon)
 });
 
 input.addEventListener('input', function() {
-  pokemon = input.value;
+  defaultpokemon = input.value;
   pokeball.style.display= 'flex'
-  GetPokemon(pokemon);
+  GetPokemon(defaultpokemon);
+
 });
 
 

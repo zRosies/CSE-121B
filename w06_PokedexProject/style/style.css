@@ -207,14 +207,32 @@ footer p{
     left: 7rem;
     animation: loading 2s infinite;
     display: none;
+    transition: .2s ease-in-out;
+}
+
+
+
+#pokeball.ative{
+    display: block;
+}
+
+.name{
+    position: absolute;
+    font-weight: 800;
+    top: 16.5rem;
+    left: 9rem;
+    display: flex;
+    justify-content: space-around;
 }
 
 #name{
-    position: absolute;
-    font-size: 1.4em;
-    font-weight: 800;
-    top: 16.5rem;
-    left: 10rem;
+    
+}
+
+#number{
+    margin-right: 5px;
+    color: #878686;
+
 }
 
 @keyframes loading {
@@ -236,5 +254,31 @@ footer p{
     100% {
         transform: rotate(1800deg);
     } 
+}
+
+#pokeball2{
+    position: absolute;
+    width: 25px;
+    top: 16.5rem;
+    left: 7rem;
+    display: flex;
+    animation: catching 1.1s infinite;
+}
+
+@keyframes catching{
+    0%{
+        transform: rotate(20deg);
+    }
+    25%{
+        transform: rotate(-50deg);
+    }
+    50%{
+            transform: rotate(30deg);
+    }75%{
+        
+    }
+    100%{
+        transform: rotate(0deg);
+    }
 }
 
