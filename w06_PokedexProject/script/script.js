@@ -30,9 +30,6 @@ button.addEventListener('click', function() {
       }, 440);
     
 
-
-
-
 });
 
 //Here we go...
@@ -52,7 +49,7 @@ let clastype= document.querySelectorAll(".type");
 const form = document.querySelector('.pokedex');
 
 let defaultpokemon= 315;
-// let PreviousNext= parseInt(defaultpokemon);
+
 
 async function getApilink(pokemon){
   const apilink = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
@@ -79,7 +76,8 @@ async function GetPokemon(pokemon){
     pokemonname.style.display='flex';
     pokemonpic.style.display='flex'
     const types = data.types.map(typeObj => typeObj.type.name);
-
+    
+    //Getting pokemons type and their background color 
     let secondtype='';
     if (types[1]== undefined){
       types[1]= '';
