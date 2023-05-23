@@ -65,6 +65,7 @@ async function GetPokemon(pokemon){
 
 GetPokemon(defaultpokemon);
 previous.addEventListener('click', function() {
+  defaultpokemon-=1;
   pokeball2.style.display='none'
   pokeball.style.display= 'flex';
   setTimeout(() => {
