@@ -162,6 +162,19 @@ async function GetPokemon(pokemon){
         element.style.background = 'rgba(0,245, 0, 0.5)';
       });
     }
+    else if (types[0] == 'ice'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(39,217, 245, 0.5)';
+      });
+    }
+    else if (types[0] == 'dragon'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(65,130, 140, 0.5)';
+      });
+    }
+    
 
   }
   else{
@@ -172,7 +185,6 @@ async function GetPokemon(pokemon){
     pokemonname.style.display='none';
     pokemonpic.style.display='none'
     pokeball2.style.display='flex'
-    
   }
  
 }
