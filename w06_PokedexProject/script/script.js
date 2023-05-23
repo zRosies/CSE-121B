@@ -51,7 +51,7 @@ let clastype= document.querySelectorAll(".type");
 
 const form = document.querySelector('.pokedex');
 
-let defaultpokemon= 315;
+let defaultpokemon= 262;
 // let PreviousNext= parseInt(defaultpokemon);
 
 async function getApilink(pokemon){
@@ -79,6 +79,7 @@ async function GetPokemon(pokemon){
     pokemonname.style.display='flex';
     pokemonpic.style.display='flex'
     const types = data.types.map(typeObj => typeObj.type.name);
+
     let secondtype='';
     if (types[1]== undefined){
       types[1]= '';
@@ -91,6 +92,89 @@ async function GetPokemon(pokemon){
     clastype.forEach(element => {
       element.style.display = 'flex';
     });
+    if (types[0] == 'fire') {
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(255, 0, 0, 0.5)';
+      });
+    }
+    else if (types[0] == 'water'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(39, 131, 245, 0.5)';
+      });
+    }
+    else if (types[0] == 'bug'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(108, 45, 180, 0.5)';
+      });
+    }
+    else if (types[0] == 'poison'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(72, 16, 114, 0.5)';
+      });
+    }
+    else if (types[0] == 'rock'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(126, 120, 130, 0.5)';
+      });
+    }
+    else if (types[0] == 'fighting' || types[0] =='dark'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(0, 0, 0, 0.5)';
+      });
+    }
+    else if (types[0] == 'normal'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(180, 133, 45, 0.5)';
+      });
+    }
+    else if (types[0] == 'electric'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(218, 255, 45, 0.5)';
+      });
+    }
+    else if (types[0] == 'fairy'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(248, 118, 220, 0.5)';
+      });
+    }
+    else if (types[0] == 'ground'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(72, 36, 6, 0.5)';
+      });
+    }
+    else if (types[0] == 'psychic'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(104, 18, 56, 0.5)';
+      });
+    }
+    else if (types[0] == 'grass'){
+      clastype.forEach(element => {
+        element.style.background='none';
+        element.style.background = 'rgba(0,245, 0, 0.5)';
+      });
+    }
+
+    
+   
+
+    
+    // else if (types[0] == 'fire'){
+      
+    // }
+    // else if (types[0] == 'fire'){
+      
+    // }
   }
   else{
     clastype.forEach(element => {
@@ -109,7 +193,6 @@ GetPokemon(defaultpokemon);
 
 input.addEventListener('input', function() {
   defaultpokemon= input.value;
-  pokeball.style.display= 'flex'
   GetPokemon(defaultpokemon);
 
 });

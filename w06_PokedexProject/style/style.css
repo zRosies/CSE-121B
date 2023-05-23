@@ -181,7 +181,7 @@ footer p{
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 10rem;
+    top: 9.8rem;
     left: 7rem;
     width:80px;
     height: 80px;
@@ -284,9 +284,11 @@ footer p{
 
 #poketype{
     margin-left: 5px;
+    
 }
 
 .type{
+    text-shadow: 1px 1px 1px #000000;
     z-index: 20;
     width: 60%;
     color: white;
