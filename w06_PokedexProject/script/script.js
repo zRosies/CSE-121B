@@ -16,6 +16,7 @@ const pokedex = document.querySelector(".pokedex");
 
 
 
+
 button.addEventListener('click', function() {
 
     
@@ -37,12 +38,14 @@ button.addEventListener('click', function() {
 //Here we go...
 
 const pokemonpic = document.querySelector("#pokemon")
-const pokemonnumber= document.querySelector("#number");
+let pokemonnumber= document.querySelector("#number");
 const pokemonname = document.querySelector("#name");
 const next = document.querySelector("#next");
 const previous = document.querySelector("#previous");
 const pokeball = document.querySelector("#pokeball");
 const pokeball2= document.querySelector("#pokeball2");
+const poketype = document.querySelector("#poketype")
+
 
 
 const form = document.querySelector('.pokedex');
@@ -52,18 +55,47 @@ let defaultpokemon= 315;
 
 async function getApilink(pokemon){
   const apilink = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-  const data = await apilink.json()
+  let data='';
+  if(!apilink.ok){
+    data= false
+  }
+  else{
+  data = await apilink.json()
+  }
+  
   return data
 
 }
 
 async function GetPokemon(pokemon){
   const data = await getApilink(pokemon)
-  pokemonnumber.innerHTML=`${data.id} -`;
-  const int = data.id;
-  defaultpokemon= parseInt(int);
-  pokemonname.innerHTML=data.name;
-  pokemonpic.src=data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+  if(data){
+    pokemonnumber.innerHTML=`${data.id} -`;
+    const int = data.id;
+    defaultpokemon= parseInt(int);
+    pokemonname.innerHTML=data.name;
+    pokemonpic.src=data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+    pokemonname.style.display='flex';
+    pokemonpic.style.display='flex'
+    const types = data.types.map(typeObj => typeObj.type.name);
+    let secondtype='';
+    if (types[1]== undefined){
+      types[1]= '';
+
+    }
+    else{
+      secondtype=`/${types[1]}`
+    }
+    poketype.innerHTML = `${types[0]}${secondtype}`;
+    
+  }
+  else{
+    pokemonnumber.innerHTML=`Not found ;-;`;
+    pokemonname.style.display='none';
+    pokemonpic.style.display='none'
+    pokeball2.style.display='flex'
+    
+  }
 }
 
 GetPokemon(defaultpokemon);
