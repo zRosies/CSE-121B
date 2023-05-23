@@ -37,10 +37,11 @@ button.addEventListener('click', function() {
 //Here we go...
 
 const pokemonpic = document.querySelector("#pokemon")
-const input = document.querySelector("#input");
 const pokemonname = document.querySelector("#name");
+const next = document.querySelector("#next")
 // const pokemonnumber= document.querySelector("");
-
+const pokeball = document.querySelector("#pokeball")
+let pokemon= 1;
 
 
 async function getApilink(pokemon){
@@ -57,12 +58,25 @@ async function GetPokemon(pokemon){
   pokemonpic.src=data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
 }
 
-GetPokemon('159');
+const form = document.querySelector('.pokedex');
 
-const form = document.querySelector('form');
+next.addEventListener('click', function() {
+  pokemon +=1;
+  GetPokemon(pokemon)
+});
 
-addEventListener('submit', function(){
-  GetPokemonName(input.value);
-})
+input.addEventListener('input', function() {
+  pokemon = input.value;
+  pokeball.style.display= 'flex'
+  GetPokemon(pokemon);
+});
+
+
+
+
+// form.addEventListener('submit', function(){
+//   const input = document.querySelector("#input");
+//   GetPokemonName(input.value);
+// })
 
 
