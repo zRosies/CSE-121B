@@ -1,0 +1,239 @@
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to top,  #fdfdfd 40% ,  #0f5a82 90% );
+    padding-bottom: 600px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background: #302f2f;
+    padding: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+span{
+    color: yellow;
+}
+
+footer{
+    margin-top: 0;
+    background-color: #302f2f;
+    padding: 40px;
+    box-shadow: 1px 1px 10px #ffff;
+}
+
+footer p{
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* padding: 10rem; */
+}
+
+.container .closed {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+   
+    /* 
+    transition: transform 0.5s; Specifies the transition for smooth animation */
+}
+  
+/* .container.closed {
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: transform 1s, opacity .8s;
+    pointer-events: none;
+} */
+
+.container .poke.active{
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+    pointer-events: none;
+    
+    
+}
+.container .opened{
+    position: absolute;
+    width: 100%;
+    display: none;
+}
+
+
+.poke{
+    position: relative;
+    left: 0%;
+    width: 100%;
+    justify-content: center;
+}
+
+.poke img{
+    
+    margin: 0;
+    width: 100%;
+    
+}
+.container button{
+    cursor: pointer;
+    position: absolute;
+    padding: 8px;
+    top: 13rem;
+    left: 4rem;
+    width: 10rem;
+    border-radius: 4px;
+    /* border: 2px solid #000000 ; */
+    box-shadow: -2px 3px 0 #302f2f, -4px 6px 2px #000000;
+    
+    background: #302f2f;
+    color: #fdfdfd;
+}
+
+#journeybutton{
+    top:13.5rem;
+}
+
+.container button:active{
+    box-shadow: inset 2px 2px  #0a0a0a  ;
+    font-size: small;
+}
+
+.title img{
+    width:320px;
+}
+
+
+.pokedex{
+    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    display: none;
+    transition: transform 0.5s;
+}
+
+.width{
+    position: relative;
+    left: 0%;
+    width: 100%;
+    justify-content: center;
+    transition: .5s ease-in;
+}
+
+
+.width img{
+    width:260px;
+}
+
+#next{
+    font-weight: 700;
+    top: 24rem;
+    left: 10rem;
+    width:6rem;
+    padding: 10px;
+}
+
+#previous{
+    font-weight: 700;   
+    top: 24rem;
+    left: 3rem;
+    width:6rem;
+    padding: 10px;
+
+}
+
+#pokemon{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 10rem;
+    left: 7rem;
+    width:80px;
+    height: 80px;
+    /* border: 1px solid blue; */
+}
+
+#input{
+    
+    outline: none;
+    padding: 5px;
+    position: absolute;
+    top: 20rem;
+    left: 4rem;
+    border: 1.5px solid #000000;
+    border-radius: 2px;
+    box-shadow: -2px 4px 0 #878686, -3px 5px 0 #222222;
+}
+
+#pokeball{
+    position: absolute;
+    width: 25px;
+    top: 16.5rem;
+    left: 7rem;
+    animation: loading 2s infinite;
+}
+
+#name{
+    position: absolute;
+    font-size: 1.4em;
+    font-weight: 800;
+    top: 16.5rem;
+    left: 10rem;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(360deg);
+    }
+    40% {
+        transform: rotate(720deg);
+    }
+    60% {
+        transform: rotate(1080deg);
+    }
+    80% {
+        transform: rotate(1440deg);
+    }
+    100% {
+        transform: rotate(1800deg);
+    } 
+}
+

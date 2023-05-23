@@ -5,18 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="#">home</a>
+            <a href="#">Home</a>
             <a href="">Return to portal</a>
 
         </nav>
     </header>
     <main>
+        
+        <div class="container">
+            <div class="title">
+                <img src="img/sample.png" alt="title">
+            </div>
+            <div class="poke">
+                <img class="closed" src="img/pokedex (1).png" alt="closed">
+                <!-- <img class="opened" src="img/pokedex opened.png" alt="opened"> -->
+                <button id="journeybutton">Start your Journey</button>
+            </div>
+            <div class="pokedex">
+                <div class="width">
+                    <img class="closed" src="img/pokedex opened.png" alt="closed">
+                    <img id="pokemon" src="" alt="aa">
+                    <input id="input" type="text" placeholder="Seek your pokemon">
+                    <p id="name"></p>
+                    <p id="number"></p>
+                    <button id="next">Next ></button>
+                    <button id="previous">< Previous </button>
+                    <img id="pokeball" src="img/pokeball2.png" alt="pokeball">
+                </div>
+                
+            </div>
+            
+        </div>
+
 
     </main>
+    <footer>
+        <p>&copy;<span id="year"></span> All rights reserved | Gustavo Bispo | Pokedex| Last Updated: <span id="updt"></span></p>
+    </footer>
     <script src="script/script.js"></script>
 </body>
 </html>
