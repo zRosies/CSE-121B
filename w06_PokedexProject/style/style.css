@@ -173,7 +173,7 @@ footer p{
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 9.8rem;
+    top: 9.9rem;
     left: 7rem;
     width:80px;
     height: 80px;
@@ -196,7 +196,7 @@ footer p{
     position: absolute;
     width: 25px;
     top: 16.5rem;
-    left: 7rem;
+    left: 6.5rem;
     animation: loading 2s infinite;
     display: none;
     transition: .2s ease-in-out;
@@ -211,14 +211,10 @@ footer p{
 .name{
     position: absolute;
     font-weight: 800;
-    top: 16.5rem;
-    left: 9rem;
+    top: 16.8rem;
+    left: 8.5rem;
     display: flex;
     justify-content: space-around;
-}
-
-#name{
-    
 }
 
 #number{
@@ -252,7 +248,7 @@ footer p{
     position: absolute;
     width: 25px;
     top: 16.5rem;
-    left: 7rem;
+    left: 6.5rem;
     display: flex;
     animation: catching 1s infinite;
 }
@@ -281,14 +277,17 @@ footer p{
 
 .type{
     text-shadow: 1px 1px 1px #000000;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
     z-index: 20;
-    width: 60%;
+    width: 60.2%;
     color: white;
     position: absolute;
-    top: 14.3rem;
-    padding-top: 2px;
+    top: 14.5rem;
+    padding-top: 4px;
     padding-bottom: 8px;
-    left: 3.1rem;
+    padding-right: 2px;
+    left: 3.12rem;
     display: flex;
     justify-content: center;
     background: rgba(0, 0, 0, 0.5);

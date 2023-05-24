@@ -43,12 +43,9 @@ const pokeball = document.querySelector("#pokeball");
 const pokeball2= document.querySelector("#pokeball2");
 const poketype = document.querySelector("#poketype");
 let clastype= document.querySelectorAll(".type");
-
-
-
 const form = document.querySelector('.pokedex');
 
-let defaultpokemon= 497;
+let defaultpokemon= 94;
 
 
 async function getApilink(pokemon){
@@ -67,7 +64,8 @@ async function getApilink(pokemon){
 
 async function GetPokemon(pokemon){
   const data = await getApilink(pokemon)
-  if(data){
+  
+  try{
     pokemonnumber.innerHTML=`${data.id} -`;
     const int = data.id;
     defaultpokemon= parseInt(int);
@@ -108,7 +106,7 @@ async function GetPokemon(pokemon){
         element.style.background = 'rgba(108, 45, 180, 0.5)';
       });
     }
-    else if (types[0] == 'poison'){
+    else if (types[0] == 'poison' || types[0]=='ghost'){
       clastype.forEach(element => {
         element.style.background='none';
         element.style.background = 'rgba(72, 16, 114, 0.5)';
@@ -177,7 +175,7 @@ async function GetPokemon(pokemon){
     
 
   }
-  else{
+  catch(undefined){
     clastype.forEach(element => {
       element.style.display = 'none';
     });
@@ -193,6 +191,16 @@ GetPokemon(defaultpokemon);
 
 input.addEventListener('input', function() {
   defaultpokemon= input.value;
+  defaultpokemon=defaultpokemon.toLowerCase();
+  pokeball2.style.display='none';
+  pokeball.style.display= 'flex';
+ 
+  setTimeout(() => {
+    pokeball.style.display= 'none';
+    pokeball2.style.display='flex';
+  }, 1700);
+
+  
   GetPokemon(defaultpokemon);
 
 });
