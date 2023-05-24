@@ -205,7 +205,7 @@ input.addEventListener('input', function() {
       pokeball2.style.display = 'flex';
       GetPokemon(defaultpokemon);
     }, 800);
-  }, 500); // 
+  }, 600); // 
 });
 
 previous.addEventListener('click', function() {
