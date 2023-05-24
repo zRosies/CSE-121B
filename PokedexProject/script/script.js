@@ -84,6 +84,7 @@ async function GetPokemon(pokemon){
     else{
       secondtype=`/${types[1]}`
     }
+
     poketype.innerHTML = `${types[0]}${secondtype}`;
     clastype.forEach(element => {
       element.style.display = 'flex';
@@ -188,21 +189,23 @@ async function GetPokemon(pokemon){
 }
 
 GetPokemon(defaultpokemon);
+let timeoutId;
 
 input.addEventListener('input', function() {
-  defaultpokemon= input.value;
-  defaultpokemon=defaultpokemon.toLowerCase();
-  pokeball2.style.display='none';
-  pokeball.style.display= 'flex';
- 
-  setTimeout(() => {
-    pokeball.style.display= 'none';
-    pokeball2.style.display='flex';
-  }, 1700);
-
+  clearTimeout(timeoutId); // 
   
-  GetPokemon(defaultpokemon);
+  timeoutId = setTimeout(() => {
+    defaultpokemon = input.value;
+    defaultpokemon = defaultpokemon.toLowerCase();
+    pokeball2.style.display = 'none';
+    pokeball.style.display = 'flex';
 
+    setTimeout(() => {
+      pokeball.style.display = 'none';
+      pokeball2.style.display = 'flex';
+      GetPokemon(defaultpokemon);
+    }, 2000);
+  }, 500); // 
 });
 
 previous.addEventListener('click', function() {
