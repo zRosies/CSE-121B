@@ -204,7 +204,7 @@ input.addEventListener('input', function() {
       pokeball.style.display = 'none';
       pokeball2.style.display = 'flex';
       GetPokemon(defaultpokemon);
-    }, 1800);
+    }, 800);
   }, 500); // 
 });
 
